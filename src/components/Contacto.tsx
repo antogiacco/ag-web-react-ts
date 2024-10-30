@@ -1,3 +1,5 @@
+import ContactoInputsInfoPersonal from "./ContactoInputsInfoPersonal";
+
 export default function Contacto() {
   return (
     <section id="contacto" className="w-11/12 mx-auto m-4 p-2.5 text-center">
@@ -13,47 +15,25 @@ export default function Contacto() {
           action="/send-email"
           method="post"
         >
-          <fieldset className="border border-blanco rounded-[10px] m-1.5 p-5 flex flex-wrap justify-evenly gap-5">
+          <fieldset className="border border-blanco rounded-[10px] m-1.5 p-5">
             <legend className="font-semibold text-gris text-xl px-3">
               Información Personal:
             </legend>
-            <div
-              className="flex justify-evenly w-full gap-5 contenedor-input"
-              id="divNombre"
-            >
-              <label htmlFor="nombre">Nombre:</label>
-              <input
-                className="placeholder:text-gris placeholder:text-center bg-lila outline-none focus:outline-violegris focus:outline-dotted"
-                type="text"
-                placeholder="Tu Nombre"
+            <div className="flex flex-wrap justify-evenly gap-5 w-full">
+              <ContactoInputsInfoPersonal
+                label="Nombre:"
                 id="nombre"
-                name="nombre"
+                placeholder="Tu nombre"
               />
-            </div>
-            <div
-              className=" flex justify-evenly w-full gap-5 contenedor-input"
-              id="divEmail"
-            >
-              <label htmlFor="email">E-mail: </label>
-              <input
-                className="placeholder:text-gris placeholder:text-center bg-lila outline-none focus:outline-violegris focus:outline-dotted"
-                type="email"
-                placeholder="Tu Email"
+              <ContactoInputsInfoPersonal
+                label="E-mail:"
                 id="email"
-                name="email"
+                placeholder="Tu correo"
               />
-            </div>
-            <div
-              className="flex justify-evenly w-full gap-5 contenedor-input"
-              id="divTel"
-            >
-              <label htmlFor="telefono">Teléfono:</label>
-              <input
-                className="placeholder:text-gris placeholder:text-center bg-lila outline-none focus:outline-violegris focus:outline-dotted"
-                type="tel"
-                placeholder="Tu Teléfono"
+              <ContactoInputsInfoPersonal
+                label="Teléfono:"
                 id="telefono"
-                name="telefono"
+                placeholder="Tu teléfono"
               />
             </div>
           </fieldset>
@@ -144,7 +124,7 @@ export default function Contacto() {
             </div>
           </fieldset>
           <input
-            className="bg-violegris text-lila border-2 border-lila m-4 py-2.5 px-5 font-semibold rounded-[20px]"
+            className="bg-violegris text-lila border-2 border-lila m-4 py-2.5 px-5 font-semibold rounded-[20px] hover:cursor-pointer hover:bg-violaceo tracking-widest outline-none focus:outline-violegris focus:outline-dotted"
             type="submit"
             value="Enviar"
           />
