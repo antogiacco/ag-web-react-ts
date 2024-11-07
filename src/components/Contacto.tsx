@@ -44,9 +44,18 @@ export default function Contacto() {
             <legend className="font-semibold text-gris text-xl px-3">
               Consulta:
             </legend>
-            <div id="divConsulta">
-              <label htmlFor="consulta">Busco asesoramiento sobre...</label>
+            <div
+              className="flex flex-col items-center justify-center"
+              id="divConsulta"
+            >
+              <label
+                className="pb-4 text-[16px] tracking-wide"
+                htmlFor="consulta"
+              >
+                Busco asesoramiento sobre...
+              </label>
               <textarea
+                className="placeholder:text-gris placeholder:text-center bg-lila outline-none focus:outline-violegris focus:outline-dotted m-2.5 shadow-[0_0.5rem_0.5rem_rgba(0,0,0,0.5)] w-8/12 text-center min-h-[150px]"
                 id="consulta"
                 name="consulta"
                 placeholder="Introduzca su consulta"
@@ -57,70 +66,116 @@ export default function Contacto() {
             <legend className="font-semibold text-gris text-xl px-3">
               Preferencias:
             </legend>
-            <div id="tel-email">
-              <p className="m-2.5 text-[17px] text-blanco p-pref">
+            <div
+              className="pb-5 flex flex-col justify-center xl:flex-row items-center"
+              id="tel-email"
+            >
+              <p className="m-2.5 text-[17px] text-blanco tracking-wide p-pref">
                 Cómo desea ser contactado:
               </p>
-              <input
-                name="contactoPref"
-                type="radio"
-                value="telefono"
-                id="contactar-telefono"
-              />
-              <label className="custom-radio" htmlFor="contactar-telefono">
-                Teléfono
-              </label>
-              <input
-                name="contactoPref"
-                type="radio"
-                value="email"
-                id="contactar-email"
-              />
-              <label className="custom-radio" htmlFor="contactar-email">
-                E-mail
-              </label>
+              <div className="flex flex-col sm:flex-row justify-center items-center">
+                <div>
+                  <input
+                    className="mx-1 cursor-pointer"
+                    name="contactoPref"
+                    type="radio"
+                    value="telefono"
+                    id="contactar-telefono"
+                  />
+                  <label
+                    className="tracking-wide mx-1.5 cursor-pointer custom-radio"
+                    htmlFor="contactar-telefono"
+                  >
+                    Teléfono
+                  </label>
+                </div>
+                <div>
+                  <input
+                    className="mx-1 cursor-pointer"
+                    name="contactoPref"
+                    type="radio"
+                    value="email"
+                    id="contactar-email"
+                  />
+                  <label
+                    className="tracking-wide mx-1.5 cursor-pointer custom-radio"
+                    htmlFor="contactar-email"
+                  >
+                    E-mail
+                  </label>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="m-2.5 text-[17px] text-blanco p-pref">
+            <div className="pb-5 flex flex-col justify-center xl:flex-row items-center">
+              <p className="m-2.5 text-[17px] text-blanco tracking-wide p-pref">
                 Si eligió teléfono, indique disponibilidad horaria:
               </p>
-              <div className="fecha-hora">
-                <label htmlFor="fecha">Fecha:</label>
-                <input type="date" id="fecha" name="fecha" />
-              </div>
-              <div className="fecha-hora">
-                <label htmlFor="hora">Hora:</label>
-                <input
-                  type="time"
-                  id="hora"
-                  min="09:00"
-                  max="18:00"
-                  name="hora"
-                />
+              <div className="flex flex-col sm:flex-row justify-center items-center">
+                <div className="mb-2.5 fecha-hora">
+                  <label className="mr-2.5 tracking-wide" htmlFor="fecha">
+                    Fecha:
+                  </label>
+                  <input
+                    className="shadow-[0_0.5rem_0.5rem_rgba(0,0,0,0.5)] bg-lila text-gris text-center p-0.5  focus:outline-violegris focus:outline-dotted sm:mr-2.5"
+                    type="date"
+                    id="fecha"
+                    name="fecha"
+                  />
+                </div>
+                <div className="mb-2.5 fecha-hora">
+                  <label
+                    className="mr-2.5 tracking-wide text-[16px]"
+                    htmlFor="hora"
+                  >
+                    Hora:
+                  </label>
+                  <input
+                    className="shadow-[0_0.5rem_0.5rem_rgba(0,0,0,0.5)] bg-lila text-gris text-center p-0.5 px-2.5  focus:outline-violegris focus:outline-dotted"
+                    type="time"
+                    id="hora"
+                    min="09:00"
+                    max="18:00"
+                    name="hora"
+                  />
+                </div>
               </div>
             </div>
-            <div>
-              <p className="m-2.5 text-[17px] text-blanco p-pref">
+            <div className="flex flex-col xl:flex-row justify-center items-center">
+              <p className="m-2.5 text-[17px] text-blanco tracking-wide p-pref">
                 Cómo desea ser asesorado:
               </p>
-              <input
-                name="asesoria"
-                type="radio"
-                value="presencial"
-                id="ases-presencial"
-              />
-              <label className="custom-radio" htmlFor="ases-presencial">
-                Presencial
-              </label>
-              <input
-                name="asesoria"
-                type="radio"
-                value="virtual"
-                id="ases-virtual"
-              />
-              <label className="custom-radio" htmlFor="ases-virtual">
-                Virtual
-              </label>
+              <div className="flex flex-col sm:flex-row justify-center items-center">
+                <div>
+                  <input
+                    className="mx-1 cursor-pointer checked:bg-violegris"
+                    name="asesoria"
+                    type="radio"
+                    value="presencial"
+                    id="ases-presencial"
+                  />
+                  <label
+                    className="tracking-wide mx-1.5 cursor-pointer custom-radio"
+                    htmlFor="ases-presencial"
+                  >
+                    Presencial
+                  </label>
+                </div>
+                <div>
+                  <input
+                    className="mx-1 cursor-pointer checked:bg-violegris"
+                    name="asesoria"
+                    type="radio"
+                    value="virtual"
+                    id="ases-virtual"
+                  />
+                  <label
+                    className="tracking-wide mx-1.5 cursor-pointer custom-radio"
+                    htmlFor="ases-virtual"
+                  >
+                    Virtual
+                  </label>
+                </div>
+              </div>
             </div>
           </fieldset>
           <input

@@ -8,7 +8,7 @@ export default function BarraNav() {
   ];
 
   return (
-    <div className="w-full text-center flex flex-col items-center justify-around md:grid md:grid-cols-[1fr_3fr] md:place-items-center">
+    <div className="w-full text-center flex flex-col items-center justify-around sm:grid sm:grid-cols-[1fr_3fr] sm:place-items-center">
       <a href="index.html">
         <img
           className="w-24 my-1"

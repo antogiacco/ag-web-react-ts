@@ -15,7 +15,7 @@ export default function Formacion() {
             alt="Foto Facultad de Derecho UBA"
           />
         </div>
-        <div className="flex flex-col flex-wrap items-center content-center sm:items-start min-w-[400px] info-formacion">
+        <div className="flex flex-col flex-wrap items-center content-center sm:items-start info-formacion">
           <InfoFormacion
             imagen="/public/Emblema_de_la_facultad_de_derecho_de_la_UBA.png"
             altImg="Escudo Facultad de Derecho UBA"

@@ -1,8 +1,8 @@
 export default function Slogan() {
   return (
-    <section className="pt-[124px] w-11/12 mx-auto grid md:grid-cols-2 items-center border-b-2 border-b-lila border-double">
+    <section className="pt-[255px] sm:pt-[132px] md:pt-[124px] w-11/12 mx-auto grid md:grid-cols-2 justify-center items-center border-b-2 border-b-lila border-double">
       <img
-        className="mt-2.5 mb-4 ml-2.5"
+        className="mt-2.5 mb-4 md:ml-2.5"
         src="/public/pilares-justicia.jpeg"
         alt="Foto pilares justicia"
       />
