@@ -2,12 +2,16 @@ type ContactoInputsInfoPersonalProps = {
   label: string;
   id: string;
   placeholder: string;
+  datosCorreo: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 };
 
 export default function ContactoInputsInfoPersonal({
   label,
   id,
   placeholder,
+  datosCorreo,
 }: ContactoInputsInfoPersonalProps) {
   return (
     <div
@@ -23,6 +27,7 @@ export default function ContactoInputsInfoPersonal({
         placeholder={placeholder}
         id={id}
         name={id}
+        onChange={datosCorreo}
       />
     </div>
   );

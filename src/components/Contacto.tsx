@@ -1,6 +1,39 @@
+import { useState } from "react";
 import ContactoInputsInfoPersonal from "./ContactoInputsInfoPersonal";
 
+type Correo = {
+  nombre: string;
+  email: string;
+  telefono: string;
+  consulta: string;
+  contactoPref: string;
+  fecha: string;
+  hora: string;
+  asesoria: string;
+};
+
 export default function Contacto() {
+  const [correo, setCorreo] = useState<Correo>({
+    nombre: "",
+    email: "",
+    telefono: "",
+    consulta: "",
+    contactoPref: "",
+    fecha: "",
+    hora: "",
+    asesoria: "",
+  });
+
+  const datosCorreo = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setCorreo((prevCorreo) => ({
+      ...prevCorreo,
+      [name]: value,
+    }));
+  };
+
   return (
     <section id="contacto" className="w-11/12 mx-auto m-4 p-2.5 text-center">
       <h2 className="text-4xl font-bold my-2.5 h-contacto">Contacto</h2>
@@ -24,16 +57,19 @@ export default function Contacto() {
                 label="Nombre:"
                 id="nombre"
                 placeholder="Tu nombre"
+                datosCorreo={datosCorreo}
               />
               <ContactoInputsInfoPersonal
                 label="E-mail:"
                 id="email"
                 placeholder="Tu correo"
+                datosCorreo={datosCorreo}
               />
               <ContactoInputsInfoPersonal
                 label="Teléfono:"
                 id="telefono"
                 placeholder="Tu teléfono"
+                datosCorreo={datosCorreo}
               />
             </div>
           </fieldset>
@@ -59,6 +95,8 @@ export default function Contacto() {
                 id="consulta"
                 name="consulta"
                 placeholder="Introduzca su consulta"
+                onChange={datosCorreo}
+                value={correo.consulta}
               ></textarea>
             </div>
           </fieldset>
@@ -81,6 +119,7 @@ export default function Contacto() {
                     type="radio"
                     value="telefono"
                     id="contactar-telefono"
+                    onChange={datosCorreo}
                   />
                   <label
                     className="tracking-wide mx-1.5 cursor-pointer custom-radio"
@@ -96,6 +135,7 @@ export default function Contacto() {
                     type="radio"
                     value="email"
                     id="contactar-email"
+                    onChange={datosCorreo}
                   />
                   <label
                     className="tracking-wide mx-1.5 cursor-pointer custom-radio"
@@ -120,6 +160,7 @@ export default function Contacto() {
                     type="date"
                     id="fecha"
                     name="fecha"
+                    onChange={datosCorreo}
                   />
                 </div>
                 <div className="mb-2.5 fecha-hora">
@@ -136,6 +177,7 @@ export default function Contacto() {
                     min="09:00"
                     max="18:00"
                     name="hora"
+                    onChange={datosCorreo}
                   />
                 </div>
               </div>
@@ -152,6 +194,7 @@ export default function Contacto() {
                     type="radio"
                     value="presencial"
                     id="ases-presencial"
+                    onChange={datosCorreo}
                   />
                   <label
                     className="tracking-wide mx-1.5 cursor-pointer custom-radio"
@@ -167,6 +210,7 @@ export default function Contacto() {
                     type="radio"
                     value="virtual"
                     id="ases-virtual"
+                    onChange={datosCorreo}
                   />
                   <label
                     className="tracking-wide mx-1.5 cursor-pointer custom-radio"
