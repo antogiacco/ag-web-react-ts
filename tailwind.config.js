@@ -11,7 +11,9 @@ export default {
       violaceo: '#7A89C2',
       violegris: '#72788D',
       gris: '#636B61', 
-      blanco: '#FFFFFF'
+      blanco: '#FFFFFF', 
+      verde: '#008F39', 
+      rojo: '#C3002C'
     },
     fontFamily: {
       fuentePrincipal: ['Dosis', 'sans-serif'],
